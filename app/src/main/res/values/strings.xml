@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MyFirstApp</string>
+    <string name="ingrese_el_numero_1">Ingrese el número 1</string>
+    <string name="ingrese_el_numero_2">Ingrese el número 2</string>
+    <string name="sumar">Sumar</string>
+    <string name="resultado">Resultado</string>
+    <string name="hacer_click">Haz clic</string>
+    <string name="ingrese_un_numero_valido">Ingrese un número válido</string>
+</resources>
