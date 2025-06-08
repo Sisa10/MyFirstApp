@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:gravity="center_horizontal">
+
+    <!-- Primer EditText -->
+    <EditText
+        android:id="@+id/num1"
+        android:layout_marginTop="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:autofillHints=""
+        android:hint="@string/ingrese_el_numero_1"
+        android:minHeight="50dp"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Segundo EditText -->
+    <EditText
+        android:id="@+id/num2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:autofillHints=""
+        android:hint="@string/ingrese_el_numero_2"
+        android:minHeight="50dp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Primer LinearLayout horizontal para Sumar y Restar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/bSumar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/sumar"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/bRestar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/restar"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginStart="8dp" />
+
+    </LinearLayout>
+
+    <!-- Segundo LinearLayout horizontal para Multiplicar y Dividir -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="16dp">
+
+        <Button
+            android:id="@+id/bMultiplicar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/multiplicar"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/bDividir"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/dividir"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginStart="8dp" />
+
+    </LinearLayout>
+
+    <!-- TextView para el resultado -->
+    <TextView
+        android:id="@+id/tResultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/resultado"
+        android:textSize="25sp"
+        android:layout_marginTop="20dp" />
+
+</LinearLayout>
