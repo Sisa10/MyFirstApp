@@ -1,101 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="20dp"
-    android:gravity="center_horizontal">
+    android:background="@drawable/fondo"
+    android:padding="24dp">
 
-    <!-- Primer EditText -->
-    <EditText
-        android:id="@+id/num1"
-        android:layout_marginTop="100dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:autofillHints=""
-        android:hint="@string/ingrese_el_numero_1"
-        android:minHeight="50dp"
-        android:layout_marginBottom="8dp" />
-
-    <!-- Segundo EditText -->
-    <EditText
-        android:id="@+id/num2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:autofillHints=""
-        android:hint="@string/ingrese_el_numero_2"
-        android:minHeight="50dp"
-        android:layout_marginBottom="16dp" />
-
-    <!-- Primer LinearLayout horizontal para Sumar y Restar -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center">
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
 
-        <Button
-            android:id="@+id/bSumar"
-            android:layout_width="0dp"
+        <!-- Primer EditText -->
+        <EditText
+            android:id="@+id/num1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginBottom="16dp"
+            android:hint="@string/ingrese_el_numero_1"
+            android:background="@drawable/edit_text_bg"
+            android:padding="12dp"
+            android:inputType="numberDecimal"
+            android:textSize="16sp"
+            android:textColor="@color/textColorPrimary" />
+
+        <!-- Segundo EditText -->
+        <EditText
+            android:id="@+id/num2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="24dp"
+            android:hint="@string/ingrese_el_numero_2"
+            android:background="@drawable/edit_text_bg"
+            android:padding="12dp"
+            android:inputType="numberDecimal"
+            android:textSize="16sp"
+            android:textColor="@color/textColorPrimary" />
+
+        <!-- Botones fila 1 -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/sumar"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            android:layout_marginEnd="8dp" />
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="12dp">
 
-        <Button
-            android:id="@+id/bRestar"
-            android:layout_width="0dp"
+            <Button
+                android:id="@+id/bSumar"
+                style="@style/CalcButton"
+                android:text="@string/sumar"
+                android:layout_marginEnd="8dp" />
+
+            <Button
+                android:id="@+id/bRestar"
+                style="@style/CalcButton"
+                android:text="@string/restar"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+        <!-- Botones fila 2 -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/restar"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            android:layout_marginStart="8dp" />
+            android:orientation="horizontal"
+            android:gravity="center">
 
+            <Button
+                android:id="@+id/bMultiplicar"
+                style="@style/CalcButton"
+                android:text="@string/multiplicar"
+                android:layout_marginEnd="8dp" />
+
+            <Button
+                android:id="@+id/bDividir"
+                style="@style/CalcButton"
+                android:text="@string/dividir"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+        <!-- Resultado -->
+        <TextView
+            android:id="@+id/tResultado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/result_box"
+            android:padding="16dp"
+            android:text="@string/resultado"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-medium" />
     </LinearLayout>
-
-    <!-- Segundo LinearLayout horizontal para Multiplicar y Dividir -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_marginTop="16dp">
-
-        <Button
-            android:id="@+id/bMultiplicar"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/multiplicar"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            android:layout_marginEnd="8dp" />
-
-        <Button
-            android:id="@+id/bDividir"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/dividir"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            android:layout_marginStart="8dp" />
-
-    </LinearLayout>
-
-    <!-- TextView para el resultado -->
-    <TextView
-        android:id="@+id/tResultado"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/resultado"
-        android:textSize="25sp"
-        android:layout_marginTop="20dp" />
-
-</LinearLayout>
+</ScrollView>

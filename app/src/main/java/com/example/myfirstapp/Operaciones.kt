@@ -1,6 +1,8 @@
 package com.example.myfirstapp
 
 import android.os.Bundle
+import android.view.animation.AlphaAnimation
+import android.view.animation.Animation
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -21,15 +23,24 @@ class Operaciones : AppCompatActivity() {
         val bdividir = findViewById<Button>(R.id.bDividir)
         val tresultado = findViewById<TextView>(R.id.tResultado)
 
+        // Función para mostrar el resultado con animación fade in
+        fun mostrarResultado(texto: String) {
+            tresultado.text = texto
+            val fadeIn = AlphaAnimation(0f, 1f)
+            fadeIn.duration = 600
+            fadeIn.fillAfter = true
+            tresultado.startAnimation(fadeIn)
+        }
+
         bsumar.setOnClickListener {
             val n1 = num1.text.toString().toIntOrNull()
             val n2 = num2.text.toString().toIntOrNull()
 
             if (n1 != null && n2 != null) {
                 val suma = n1 + n2
-                tresultado.text = suma.toString()
+                mostrarResultado(suma.toString())
             } else {
-                tresultado.text = getString(R.string.ingrese_un_numero_valido)
+                mostrarResultado(getString(R.string.ingrese_un_numero_valido))
             }
         }
 
@@ -39,9 +50,9 @@ class Operaciones : AppCompatActivity() {
 
             if (n1 != null && n2 != null) {
                 val resta = n1 - n2
-                tresultado.text = resta.toString()
+                mostrarResultado(resta.toString())
             } else {
-                tresultado.text = getString(R.string.ingrese_un_numero_valido)
+                mostrarResultado(getString(R.string.ingrese_un_numero_valido))
             }
         }
 
@@ -51,9 +62,9 @@ class Operaciones : AppCompatActivity() {
 
             if (n1 != null && n2 != null) {
                 val multiplicar = n1 * n2
-                tresultado.text = multiplicar.toString()
+                mostrarResultado(multiplicar.toString())
             } else {
-                tresultado.text = getString(R.string.ingrese_un_numero_valido)
+                mostrarResultado(getString(R.string.ingrese_un_numero_valido))
             }
         }
 
@@ -62,18 +73,16 @@ class Operaciones : AppCompatActivity() {
             val n2 = num2.text.toString().toIntOrNull()
 
             if (n1 != null && n2 != null) {
-                if (n2 == 0){
-                    tresultado.text = getString(R.string.ingrese_un_numero_diferente_de_cero)
-                }else {
-                    val dividir = n1 / n2 // Assuming the operation is addition based on the context. The original image shows n1-n2
-                    tresultado.text = dividir.toString()
+                if (n2 == 0) {
+                    mostrarResultado(getString(R.string.ingrese_un_numero_diferente_de_cero))
+                } else {
+                    val dividir = n1 / n2
+                    mostrarResultado(dividir.toString())
                 }
 
             } else {
-                tresultado.text = getString(R.string.ingrese_un_numero_valido)
+                mostrarResultado(getString(R.string.ingrese_un_numero_valido))
             }
         }
     }
-
-
 }

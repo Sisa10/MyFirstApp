@@ -7,7 +7,7 @@
     <string name="multiplicar">Multiplicar</string>
     <string name="dividir">Dividir</string>
     <string name="resultado">Resultado</string>
-    <string name="hacer_click">Haz clic</string>
+    <string name="hacer_click">Iniciar</string>
     <string name="ingrese_un_numero_valido">Ingrese un número válido</string>
     <string name="ingrese_un_numero_diferente_de_cero">No se puede dividir para 0</string>
 
